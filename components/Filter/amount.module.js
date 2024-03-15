@@ -1,7 +1,7 @@
 
 "use client";
 import {Option} from "antd/es/mentions";
-import {Select} from "antd";
+import {InputNumber, Select} from "antd";
 import {useDispatch} from "react-redux";
 import {setStartLetter} from "../../GlobalRedux/Features/StartLetterSlice";
 import {setEndLetter} from "../../GlobalRedux/Features/EndLetterSlice";
@@ -25,265 +25,110 @@ export default function AmountModule() {
     const start_options = [
         {
             value: 'A',
-            label: "Starts with A",
+            label: "A",
         },
         {
             value: 'B',
-            label: "Starts with B",
+            label: "B",
         },
         {
             value: 'C',
-            label: "Starts with C",
+            label: "C",
         },
         {
             value: 'D',
-            label: "Starts with D",
+            label: "D",
         },
         {
             value: 'E',
-            label: "Starts with E",
+            label: "E",
         },
         {
             value: 'F',
-            label: "Starts with F",
+            label: "F",
         },
         {
             value: 'G',
-            label: "Starts with G",
+            label: "G",
         },
         {
             value: 'H',
-            label: "Starts with H",
+            label: "H",
         },
         {
             value: 'I',
-            label: "Starts with I",
+            label: "I",
         },
         {
             value: 'J',
-            label: "Starts with J",
+            label: "J",
         },
         {
             value: 'K',
-            label: "Starts with K",
+            label: "K",
         },
         {
             value: 'L',
-            label: "Starts with L",
+            label: "L",
         },
         {
             value: 'M',
-            label: "Starts with M",
+            label: "M",
         },
         {
             value: 'N',
-            label: "Starts with N",
+            label: "N",
         },
         {
             value: 'O',
-            label: "Starts with O",
+            label: "O",
         },
         {
             value: 'P',
-            label: "Starts with P",
+            label: "P",
         },
         {
             value: 'Q',
-            label: "Starts with Q",
+            label: "Q",
         },
         {
             value: 'R',
-            label: "Starts with R",
+            label: "R",
         },
         {
             value: 'S',
-            label: "Starts with S",
+            label: "S",
         },
         {
             value: 'T',
-            label: "Starts with T",
+            label: "T",
         },
         {
             value: 'U',
-            label: "Starts with U",
+            label: "U",
         },
         {
             value: 'V',
-            label: "Starts with V",
+            label: "V",
         },
         {
             value: 'W',
-            label: "Starts with W",
+            label: "W",
         },
         {
             value: 'X',
-            label: "Starts with X",
+            label: "X",
         },
         {
             value: 'Y',
-            label: "Starts with Y",
+            label: "Y",
         },
         {
             value: 'Z',
-            label: "Starts with Z",
+            label: "Z",
         },
     ]
 
-    const End_options = [
-        {
-            value: 'A',
-            label: "Ends with A",
-        },
-        {
-            value: 'B',
-            label: "Ends with B",
-        },
-        {
-            value: 'C',
-            label: "Ends with C",
-        },
-        {
-            value: 'D',
-            label: "Ends with D",
-        },
-        {
-            value: 'E',
-            label: "Ends with E",
-        },
-        {
-            value: 'F',
-            label: "Ends with F",
-        },
-        {
-            value: 'G',
-            label: "Ends with G",
-        },
-        {
-            value: 'H',
-            label: "Ends with H",
-        },
-        {
-            value: 'I',
-            label: "Ends with I",
-        },
-        {
-            value: 'J',
-            label: "Ends with J",
-        },
-        {
-            value: 'K',
-            label: "Ends with K",
-        },
-        {
-            value: 'L',
-            label: "Ends with L",
-        },
-        {
-            value: 'M',
-            label: "Ends with M",
-        },
-        {
-            value: 'N',
-            label: "Ends with N",
-        },
-        {
-            value: 'O',
-            label: "Ends with O",
-        },
-        {
-            value: 'P',
-            label: "Ends with P",
-        },
-        {
-            value: 'Q',
-            label: "Ends with Q",
-        },
-        {
-            value: 'R',
-            label: "Ends with R",
-        },
-        {
-            value: 'S',
-            label: "Ends with S",
-        },
-        {
-            value: 'T',
-            label: "Ends with T",
-        },
-        {
-            value: 'U',
-            label: "Ends with U",
-        },
-        {
-            value: 'V',
-            label: "Ends with V",
-        },
-        {
-            value: 'W',
-            label: "Ends with W",
-        },
-        {
-            value: 'X',
-            label: "Ends with X",
-        },
-        {
-            value: 'Y',
-            label: "Ends with Y",
-        },
-        {
-            value: 'Z',
-            label: "Ends with Z",
-        },
-    ];
-
-
-
-    const name_length_options = [
-        {
-            value: '2',
-            label: 'Name Length 2'
-        },
-        {
-            value: '3',
-            label: 'Name Length 3'
-        },
-        {
-            value: '4',
-            label: 'Name Length 4'
-        },
-        {
-            value: '5',
-            label: 'Name Length 5'
-        },
-        {
-            value: '6',
-            label: 'Name Length 6'
-        },
-        {
-            value: '7',
-            label: 'Name Length 7'
-        },
-        {
-            value: '8',
-            label: 'Name Length 8'
-        },
-        {
-            value: '9',
-            label: 'Name Length 9'
-        },
-        {
-            value: '10',
-            label: 'Name Length 10'
-        },
-        {
-            value: '11',
-            label: 'Name Length 11'
-        },
-        {
-            value: '12',
-            label: 'Name Length 12'
-        },
-    ]
 
     const Gender_options = [
         {
@@ -299,11 +144,15 @@ export default function AmountModule() {
     const Sort_options = [
         {
             value:'Popular',
-            label:'Popular Names'
+            label:'Popular'
         },
         {
             value:'New',
-            label:'New Names'
+            label:'New'
+        },
+        {
+            value:'Historical',
+            label:'Historical'
         },
     ]
 
@@ -331,76 +180,133 @@ export default function AmountModule() {
 
                 <div className={'w-full flex flex-wrap gap-3 items-center justify-center px-5 my-6'}>
 
-                    <Select
-                        defaultValue="A"
-                        style={{
-                            width: "auto",
-                        }}
-                        onChange={(value)=>{
-                            dispatch(setStartLetter(value))
-                            dispatch(setFilterChange(true))
-                        }}
-                        options={start_options}
-                    />
-                    <Select
-                        defaultValue="A"
-                        style={{
-                            width: "auto",
-                        }}
-                        onChange={(value)=>{
-                            dispatch(setEndLetter(value))
-                            dispatch(setFilterChange(true))
-                        }}
-                        options={End_options}
-                    />
-                    <Select
-                        defaultValue="5"
-                        style={{
-                            width: "auto",
-                        }}
-                        onChange={(value)=>{
-                            dispatch(incrementByAmountLength(value))
-                            dispatch(setFilterChange(true))
-                        }}
-                        options={name_length_options}
-                    />
-                    <Select
-                        defaultValue="M"
-                        style={{
-                            width: "auto",
-                        }}
-                        onChange={(value)=>{
-                            dispatch(setGender(value))
-                            dispatch(setFilterChange(true))
-                        }}
-                        options={Gender_options}
-                    />
-                    <Select
-                        placeholder="Select Year"
-                        onChange={(value)=>{
-                            dispatch(incrementByAmount(value))
-                            dispatch(setFilterChange(true))
-                        }}
-                        defaultValue={'2022'}>
-                        {years.map((year, index) => (
-                            <Option key={index} value={year}>
-                                {year}
-                            </Option>
-                        ))}
-                    </Select>
-                    <Select
-                        defaultValue="Popular"
-                        style={{
-                            width: "auto",
-                        }}
-                        onChange={(value)=>{
-                            dispatch(setPopular(value))
-                            dispatch(setFilterChange(true))
-                        }}
-                        options={Sort_options}
-                    />
+                    <div className={'flex flex-row items-center gap-3 font-semibold '}>
+                        <span>Starts with</span>
+                        <Select
+                            defaultValue=" "
+                            allowClear={true}
+                            style={{
+                                width: "50px",
+                            }}
+                            onChange={(value)=>{
+                                if (value !== undefined) {
+                                    dispatch(setStartLetter(value));
+                                } else {
+                                    // Если выбрано значение "очистить", то обнуляем фильтр
+                                    dispatch(setStartLetter(''));
+                                }
+                                dispatch(setFilterChange(true));
+                            }}
+                            options={start_options}
+                        />
+                    </div>
 
-                    <div onClick={ClearFilters} className={'px-5 py-2 rounded-lg bg-[#f2f2f2]'}>Clear filters</div>
+                    <div className={'flex flex-row items-center gap-3 font-semibold '}>
+                        <span>Ends with</span>
+                        <Select
+                            defaultValue=" "
+                            style={{
+                                width: "50px",
+                            }}
+                            onChange={(value)=>{
+                                if (value !== undefined) {
+                                    dispatch(setEndLetter(value));
+                                } else {
+                                    // Если выбрано значение "очистить", то обнуляем фильтр
+                                    dispatch(setEndLetter(''));
+                                }
+                                dispatch(setFilterChange(true));
+                            }}
+                            options={start_options}
+                        />
+                    </div>
+
+                    <div className={'flex flex-row items-center gap-3 font-semibold '}>
+                        <span>Name length</span>
+                        <InputNumber
+                            min={1} // Минимальное значение
+                            max={12} // Максимальное значение
+                            defaultValue={5} // Значение по умолчанию
+                            onChange={(value) => {
+                                if (value !== undefined) {
+                                    dispatch(incrementByAmountLength(value));
+                                } else {
+                                    // Если выбрано значение "очистить", то обнуляем фильтр
+                                    dispatch(incrementByAmountLength(''));
+                                }
+                                dispatch(setFilterChange(true));
+                            }}
+                        />
+                    </div>
+
+
+                    <div className={'flex flex-row items-center gap-3 font-semibold '}>
+                        <span>Gender</span>
+                        <Select
+                            defaultValue="M"
+                            allowClear={true}
+                            style={{
+                                width: "80px",
+                                padding:"5 px"
+                            }}
+                            onChange={(value)=>{
+                                if (value !== undefined) {
+                                    dispatch(setGender(value));
+                                } else {
+                                    // Если выбрано значение "очистить", то обнуляем фильтр
+                                    dispatch(setGender(''));
+                                }
+                                dispatch(setFilterChange(true));
+                            }}
+                            options={Gender_options}
+                        />
+                    </div>
+
+                    <div className={'flex flex-row items-center gap-3 font-semibold '}>
+                        <span>Select Year</span>
+                        <Select className={'w-16'}
+                                allowClear={true}
+                            onChange={(value)=>{
+                                if (value !== undefined) {
+                                    dispatch(incrementByAmount(value));
+                                } else {
+                                    // Если выбрано значение "очистить", то обнуляем фильтр
+                                    dispatch(incrementByAmount(''));
+                                }
+                                dispatch(setFilterChange(true));
+                            }}
+                            defaultValue={' '}>
+                            {years.map((year, index) => (
+                                <Option key={index} value={year}>
+                                    {year}
+                                </Option>
+                            ))}
+                        </Select>
+                    </div>
+
+                    <div className={'flex flex-row items-center gap-3 font-semibold '}>
+                        <span>Sort by</span>
+                        <Select
+                            allowClear={true}
+                            defaultValue=" "
+                            style={{
+                                width: "100px",
+                            }}
+                            onChange={(value)=>{
+                                if (value !== undefined) {
+                                    dispatch(setPopular(value));
+                                } else {
+                                    // Если выбрано значение "очистить", то обнуляем фильтр
+                                    dispatch(setPopular(''));
+                                }
+                                dispatch(setFilterChange(true));
+                            }}
+                            options={Sort_options}
+                        />
+                    </div>
+
+
+                    {/*<div onClick={ClearFilters} className={'px-5 py-2 rounded-lg bg-[#f2f2f2]'}>Clear filters</div>*/}
 
 
                 </div>

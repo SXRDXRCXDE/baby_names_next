@@ -70,6 +70,7 @@ export default function Header() {
 
                     </div>
 
+
                     {/*Right Navbar*/}
                     <div className={'w-auto h-auto flex items-center gap-3 max-[950px]:hidden'}>
 
@@ -78,7 +79,7 @@ export default function Header() {
                             <div className={'absolute top-3 left-2 text-3xl text-black/60 '}>
                                 <CiSearch />
                             </div>
-                            <input className={'w-72 h-12 bg-[#f2f2f2] rounded-2xl outline-0 pl-12'}/>
+                            <input placeholder={'Search baby name'} className={'w-72 h-12 bg-[#f2f2f2] rounded-2xl outline-0 pl-12'}/>
 
                         </div>
 
@@ -95,9 +96,24 @@ export default function Header() {
 
                     </div>
 
-                    <div onClick={()=>setOpen(!isOpen)} className={'text-3xl p-2 bg-[#f2f2f2] rounded-lg min-[950px]:hidden'}>
-                        <IoIosMenu />
+                    <div className={'flex items-center gap-3 min-[950px]:hidden'}>
+
+                        {/*Search bar*/}
+                        <div className={'relative w-auto h-auto '}>
+
+                            <div className={'absolute top-3 left-2 text-3xl text-black/60 '}>
+                                <CiSearch />
+                            </div>
+                            <input placeholder={'Search baby name'} className={'max-[680px]:w-12 w-72 h-12 bg-[#f2f2f2] rounded-2xl outline-0 pl-12'}/>
+
+                        </div>
+
+                        <div onClick={()=>setOpen(!isOpen)} className={'text-3xl p-2 bg-[#f2f2f2] rounded-lg min-[950px]:hidden'}>
+                            <IoIosMenu />
+                        </div>
+
                     </div>
+
 
                     {/*Mobile version Menu*/}
                     <div className={` w-full h-screen bg-[#ffffff] absolute left-0 ${isOpen? ` top-0` : ` top-[-100vh]`} duration-500 shadow-lg min-[950px]:hidden `}>

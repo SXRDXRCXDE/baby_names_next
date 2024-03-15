@@ -1,10 +1,10 @@
+"use client";
 import MainContainer from "../components/MainContainer/MainContainer";
 import Link from "next/link";
 import { IoIosFemale, IoIosMale } from "react-icons/io";
 import { CiFacebook } from "react-icons/ci";
 import { PiInstagramLogo, PiTwitterLogoThin } from "react-icons/pi";
 import axios from "axios";
-import { Select } from "antd";
 import dynamic from 'next/dynamic';
 import {useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
@@ -67,13 +67,16 @@ const Index = () => {
 
     }
 
+    console.log(data.data)
+
+    const keyword = data?.data?.title?.seo_slug || '';
 
     return (
-        <MainContainer keywords={"Main"}>
+        <MainContainer title={data?.data?.title?.seo_title} keyword={keyword}>
             <div className={`w-full h-auto flex flex-col items-center mt-32`}>
                 {/*Dynamic slug Baby names*/}
                 <div className={'w-full max-[1550px]:px-7 max-w-[1500px] flex flex-col mt-12 '}>
-                    <span className={'text-5xl font-bold '}>{data?.data?.title?.seo_title}</span>
+                    <span className={'text-5xl font-bold max-[600px]:text-3xl '}>{data?.data?.title?.seo_title}</span>
                 </div>
 
                 {/* Filters */}

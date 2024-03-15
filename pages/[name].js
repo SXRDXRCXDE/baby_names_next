@@ -14,6 +14,8 @@ export default function () {
 
     const [handle,setHandle] = useState(true)
 
+    const [selectedRandomName,setSelectedRandomName] = useState('')
+
 
     const Contact_Information = [
         {
@@ -45,14 +47,26 @@ export default function () {
         },
     ]
 
-    function LinkHandler(value) {
-        // dispatch(setPostName(value))
-        window.scrollTo(0,0)
+    async function LinkHandler(value) {
+        await window.scrollTo(0,0)
+        await setSelectedRandomName(value)
+        await postNameRandom()
     }
 
 
     const {query} = useRouter()
 
+
+    const postNameRandom = async () => {
+        try {
+            const response = await axios.post('https://babynames-backend.onrender.com/api/post_name', {
+                name: selectedRandomName
+            });
+            setLayout(response.data);
+        } catch (error) {
+            console.error('Error:', error);
+        }
+    };
 
 
     const postName = async () => {
@@ -84,10 +98,10 @@ export default function () {
         setHandle(false)
     }
 
-
+    console.log(dataLayout)
 
     return(
-        <MainContainer keywords={query.name}>
+        <MainContainer title={`Name ` + query.name} keywords={query.name}>
             <div className={`w-full h-auto min-h-screen flex flex-col items-center mt-32`}>
 
                 <div className={'w-full max-[1550px]:px-7 max-w-[1500px] flex flex-col mt-12 '}>
@@ -120,17 +134,22 @@ export default function () {
                     <span className={'text-2xl font-bold my-8 '}> Explore Names </span>
 
 
-                    <div className={'w-full h-auto flex items-center flex-wrap justify-center gap-3'}>
+                    <div className={'w-full h-auto flex flex-col items-center'}>
 
-                        {randomNames?.random_names?.map((value, index)=> <div className={'w-[15rem] h-[12rem] flex flex-col items-center justify-center rounded-xl relative bg-black overflow-hidden shadow-xl bg-gradient-to-r from-gray-950 to-gray-600'}>
-                            <Link onClick={()=>LinkHandler(value.name)} href={`/${value.name}`} >
+                        <div className={'w-auto h-auto flex max-[500px]:flex-col items-center min-[500px]:flex-wrap justify-start gap-3'}>
 
-                                {/*<img src={cover} className={'w-full h-full object-cover absolute top-0 left-0 brightness-50 -z-0'}/>*/}
+                            {randomNames?.random_names?.slice(0,5).map((value, index)=> <div key={index} className={'w-[15rem] h-[12rem] flex flex-col items-center justify-center rounded-xl relative bg-black overflow-hidden shadow-xl bg-gradient-to-r from-gray-950 to-gray-600'}>
+                                <Link onClick={()=>LinkHandler(value.name)} href={`/${value.name}`} >
 
-                                <div className={'w-auto h-auto z-0 text-white underline text-3xl font-semibold'}>{value.name}</div>
+                                    {/*<img src={cover} className={'w-full h-full object-cover absolute top-0 left-0 brightness-50 -z-0'}/>*/}
 
-                            </Link>
-                        </div>)}
+                                    <div className={'w-auto h-auto z-0 text-white underline text-3xl font-semibold'}>{value.name}</div>
+
+                                </Link>
+                            </div>)}
+
+                        </div>
+
 
                     </div>
 
@@ -139,7 +158,7 @@ export default function () {
                 </div>
 
                 {/*Filters*/}
-                <div className={'w-full flex flex-wrap gap-5 items-center justify-center px-5 my-3'}>
+                <div className={'w-full flex flex-wrap gap-5 items-center justify-start px-5 my-3'}>
 
                     {dataLayout?.data?.categories.map((value, index)=> <div>
                         <Link href={'/'}  key={index} className={'px-3 py-2 rounded-lg bg-[#f2f2f2] text-xl font-semibold'}>{value.title}</Link>
