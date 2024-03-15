@@ -130,6 +130,7 @@ export default function () {
 
                     {dataLayout?.data?.faq?.faq_body[0].map((value, index)=> <div key={index}>
                         <CollapseMenu title={value.question} answer={value.answer}/>
+
                     </div>)}
 
 
