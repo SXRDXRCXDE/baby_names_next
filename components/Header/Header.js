@@ -45,9 +45,11 @@ export default function Header() {
 
                                     <div className={'w-auto max-[1200px]:h-5 h-8 flex  items-center justify-center'}>
 
-                                        <svg className={'w-fit h-full object-contain'} viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M6 0.333333H0V4.77777V9.22223H6V13.6667H12V9.22223V4.77777H6V0.333333Z" fill="#0D121C"/>
-                                        </svg>
+                                        <div className={'w-10 h-10 flex items-center justify-center '}>
+                                            <svg className={'w-full h-full'} viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M6 0.333333H0V4.77777V9.22223H6V13.6667H12V9.22223V4.77777H6V0.333333Z" fill="#0D121C"/>
+                                            </svg>
+                                        </div>
 
                                     </div>
 
@@ -63,7 +65,7 @@ export default function Header() {
                         {/*Navbar Links*/}
                         <div className={'flex items-center gap-3 ml-3 max-[950px]:hidden'}>
 
-                            {Navbar.map((value, index)=> <div className={'max-[1200px]:text-xl text-2xl font-bold text-black'}><Link href={`/${value.to}`} >{value.title}</Link></div>)}
+                            {Navbar.map((value, index)=> <div key={index} className={'max-[1200px]:text-xl text-2xl font-bold text-black'}><Link href={`/${value.to}`} >{value.title}</Link></div>)}
 
 
                         </div>
@@ -86,9 +88,9 @@ export default function Header() {
                         {/*Log in / Sign Up*/}
                         <div className={'flex items-center gap-3 '}>
 
-                            <div className={'w-auto h-auto max-[1200px]:py-2 max-[1200px]:px-3 py-3 px-4 flex items-center justify-center rounded-xl bg-[#1C6EF2] max-[1200px]:text-lg text-xl font-semibold text-white'}>Log in</div>
+                            <div className={'cursor-pointer w-auto h-auto max-[1200px]:py-2 max-[1200px]:px-3 py-3 px-4 flex items-center justify-center rounded-xl bg-[#1C6EF2] max-[1200px]:text-lg text-xl font-semibold text-white'}>Log in</div>
 
-                            <div className={'w-auto h-auto max-[1200px]:py-2 max-[1200px]:px-3 py-3 px-4 flex items-center justify-center rounded-xl bg-[#E8EDF5] max-[1200px]:text-lg text-xl font-semibold text-black'}>Sign Up</div>
+                            <div className={'cursor-pointer w-auto h-auto max-[1200px]:py-2 max-[1200px]:px-3 py-3 px-4 flex items-center justify-center rounded-xl bg-[#E8EDF5] max-[1200px]:text-lg text-xl font-semibold text-black'}>Sign Up</div>
 
                         </div>
 
@@ -152,7 +154,7 @@ export default function Header() {
                             <div className={'absolute top-3 left-7 text-3xl text-black/60 '}>
                                 <CiSearch />
                             </div>
-                            <input className={'w-full h-12 bg-[#f2f2f2] rounded-2xl outline-0 pl-12'} placeholder={'Search'}/>
+                            <input placeholder={'Search baby name'} className={'w-full h-12 bg-[#f2f2f2] rounded-2xl outline-0 pl-12'} />
 
                         </div>
 
@@ -167,9 +169,9 @@ export default function Header() {
                         {/*Log in / Sign Up*/}
                         <div className={'w-full justify-center mt-3 flex items-center gap-3 '}>
 
-                            <div className={'w-auto h-auto max-[1200px]:py-2 max-[1200px]:px-3 py-3 px-4 flex items-center justify-center rounded-xl bg-[#1C6EF2] max-[1200px]:text-lg text-xl font-semibold text-white'}>Log in</div>
+                            <div className={'cursor-pointer w-auto h-auto max-[1200px]:py-2 max-[1200px]:px-3 py-3 px-4 flex items-center justify-center rounded-xl bg-[#1C6EF2] max-[1200px]:text-lg text-xl font-semibold text-white'}>Log in</div>
 
-                            <div className={'w-auto h-auto max-[1200px]:py-2 max-[1200px]:px-3 py-3 px-4 flex items-center justify-center rounded-xl bg-[#E8EDF5] max-[1200px]:text-lg text-xl font-semibold text-black'}>Sign Up</div>
+                            <div className={'cursor-pointer w-auto h-auto max-[1200px]:py-2 max-[1200px]:px-3 py-3 px-4 flex items-center justify-center rounded-xl bg-[#E8EDF5] max-[1200px]:text-lg text-xl font-semibold text-black'}>Sign Up</div>
 
                         </div>
 

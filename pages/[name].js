@@ -128,7 +128,9 @@ export default function () {
 
                     <span className={'text-2xl font-bold my-8 '}> {dataLayout?.data?.faq?.faq_title} </span>
 
-                    {dataLayout?.data?.faq?.faq_body[0].map((value, index)=> <CollapseMenu title={value.question} answer={value.answer}/>)}
+                    {dataLayout?.data?.faq?.faq_body[0].map((value, index)=> <div key={index}>
+                        <CollapseMenu title={value.question} answer={value.answer}/>
+                    </div>)}
 
 
                     <span className={'text-2xl font-bold my-8 '}> Explore Names </span>
@@ -155,16 +157,18 @@ export default function () {
 
                     <span className={'text-2xl font-bold my-8 '}> Explore Categories </span>
 
+                    {/*Filters*/}
+                    <div className={'w-auto flex flex-wrap gap-5 items-center justify-start  my-3'}>
+
+                        {dataLayout?.data?.categories.map((value, index)=> <div>
+                            <Link href={'/'}  key={index} className={'px-3 py-2 rounded-lg bg-[#f2f2f2] text-xl font-semibold'}>{value.title}</Link>
+                        </div>)}
+
+                    </div>
+
                 </div>
 
-                {/*Filters*/}
-                <div className={'w-full flex flex-wrap gap-5 items-center justify-start px-5 my-3'}>
 
-                    {dataLayout?.data?.categories.map((value, index)=> <div>
-                        <Link href={'/'}  key={index} className={'px-3 py-2 rounded-lg bg-[#f2f2f2] text-xl font-semibold'}>{value.title}</Link>
-                    </div>)}
-
-                </div>
 
 
                 {/*Footer */}

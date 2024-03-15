@@ -164,15 +164,15 @@ export default function AmountModule() {
         years.push(year);
     }
 
-    function ClearFilters() {
-        dispatch(setStartLetter(''))
-        dispatch(setEndLetter(''))
-        dispatch(incrementByAmountLength(''))
-        dispatch(setGender(''))
-        dispatch(incrementByAmount(''))
-        dispatch(setPopular(''))
-        dispatch(setFilterChange(true))
-    }
+    // function ClearFilters() {
+    //     dispatch(setStartLetter(''))
+    //     dispatch(setEndLetter(''))
+    //     dispatch(incrementByAmountLength(''))
+    //     dispatch(setGender(''))
+    //     dispatch(incrementByAmount(''))
+    //     dispatch(setPopular(''))
+    //     dispatch(setFilterChange(true))
+    // }
 
     return (
         <>
@@ -225,7 +225,7 @@ export default function AmountModule() {
                         <span>Name length</span>
                         <InputNumber
                             min={1} // Минимальное значение
-                            max={12} // Максимальное значение
+                            max={15} // Максимальное значение
                             defaultValue={5} // Значение по умолчанию
                             onChange={(value) => {
                                 if (value !== undefined) {
